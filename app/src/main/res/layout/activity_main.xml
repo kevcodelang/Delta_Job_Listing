@@ -12,10 +12,10 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:backgroundTint="@color/white"
-        android:elevation="8dp"
+        android:elevation="10dp"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight="80dp"
+        app:layout_constraintHeight="dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -25,18 +25,17 @@
 
 
             <ImageView
-                android:id="@+id/imageView1"
+                android:id="@+id/logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/deltaJob_ng"
+                android:src="@drawable/deltajob_ng"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/profilePic"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.509" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/profilePic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
@@ -52,91 +51,99 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/linearLayoutCompat"
-            android:layout_width="match_parent"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-
-            <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="1dp"
-                android:width="200dp"
-                android:background="@drawable/custom_input"
-                android:ems="10"
-                android:hint="Joy title or Keyword"
-                android:inputType="textPersonName"
-                android:minHeight="40dp"
-                android:textSize="14sp"
-                tools:ignore="MissingConstraints" />
+            android:layout_marginEnd="1dp"
+            android:width="200dp"
+            android:background="@drawable/custom_input"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Job title or Keyword"
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:textSize="14sp"
+            tools:ignore="MissingConstraints" />
 
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:background="@drawable/custom_input"
-                android:text="Search"
-                tools:ignore="MissingConstraints" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="1dp"
+            android:background="@drawable/custom_input"
+            android:text="Search"
+            android:backgroundTint="@color/primaryColor"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="387dp"
-            android:layout_height="187dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/rectangle_3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="400dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/rectangle_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rsv"
-        android:layout_width="350dp"
+        android:id="@+id/rsvLastJob"
+        android:layout_width="400dp"
         android:layout_height="200dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/banner"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rsv2"
-            android:layout_width="350dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="40dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rsv" />
+        android:id="@+id/rsvTopJob"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/rsvLastJob"
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Lastest Jobs"
-            android:textFontWeight="600"
-            app:layout_constraintStart_toStartOf="@+id/rsv"
-            app:layout_constraintTop_toBottomOf="@id/imageView5" />
+        app:layout_constraintStart_toStartOf="@+id/rsvLastJob"
+        app:layout_constraintTop_toBottomOf="@id/rsvLastJob" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textFontWeight="600"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Latest Jobs"
+        android:textFontWeight="600"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/banner"
+        app:layout_constraintTop_toBottomOf="@id/banner" />
 
-            app:layout_constraintBottom_toTopOf="@+id/rsv2"
-            app:layout_constraintStart_toStartOf="@+id/rsv2"
-            app:layout_constraintTop_toBottomOf="@+id/rsv" />
+    <TextView
+        android:id="@+id/topJob"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:text="Top Jobs"
+        android:textFontWeight="600"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/rsvTopJob"
+        app:layout_constraintStart_toStartOf="@+id/rsvLastJob"
+        app:layout_constraintTop_toBottomOf="@+id/rsvLastJob" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
